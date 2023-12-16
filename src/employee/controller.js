@@ -85,7 +85,7 @@ const deleteEmployeeById = (req, res) => {
             return res.status(500).json({ error: err })
         }
         if (result.rowCount === 0) {
-            return res.status(200).json({ msg: "Employee Not Found" });
+            return res.status(404).json({ msg: "Employee Not Found" });
         }
         res.status(200).json({ msg: "Employee deleted Successfully!" });
     })
